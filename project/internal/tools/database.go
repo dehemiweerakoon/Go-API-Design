@@ -26,6 +26,8 @@ type DatabaseInterface interface{
 	GetUserLoginDetails(username string) *LoginDetails
 	GetBookDetails(bookId string) *BookDetails
 	setupDatabase() error
+	GetAllBookDetails() map[string]BookDetails
+	SaveBookDetails(book BookDetails)*BookDetails
 }
 func NewDatabase()(*DatabaseInterface,error){
 	var database DatabaseInterface = &mockDB{}

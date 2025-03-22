@@ -76,5 +76,84 @@
         "Description": "A romantic novel that critiques the British class system of the early 19th century.",
         "Price": 10.99,
         "Quantity": 6
-    }
+    },
+        "7g8h9i0j-1k2l-3m4n-5o6p7q8r9s0u2": {
+          "BookId": "7g8h9i0j-1k2l-3m4n-5o6p7q8r9s0u2",
+          "AuthorId": "g7h8i9j0-k1l2m3n4o5p6q7r8s9t0u1",
+          "PublisherId": "t3s2r1q0-p9o8-n7m6-l5k4j3i2h1g0u1",
+          "Title": "The Catcher in the Rye",
+          "PublicationDate": "1951-07-16",
+          "Isbn": "9780316769488",
+          "Pages": 277,
+          "Genre": "Fiction",
+          "Description": "A young man's struggles with growing up and finding his place in the world.",
+          "Price": 10.99,
+          "Quantity": 5
+        },
+        "8h9i0j1k-2l3m-4n5o-6p7q8r9s0t2u3": {
+          "BookId": "8h9i0j1k-2l3m-4n5o-6p7q8r9s0t2u3",
+          "AuthorId": "h8i9j0k1-l2m3n4o5p6q7r8s9t0u1v2",
+          "PublisherId": "u4t3s2r1-q0p9-o8n7-m6l5-k4j3i2h1v2",
+          "Title": "Brave New World",
+          "PublicationDate": "1932-08-01",
+          "Isbn": "9780060850524",
+          "Pages": 311,
+          "Genre": "Dystopian",
+          "Description": "A critique of a futuristic society dominated by technology and consumerism.",
+          "Price": 12.50,
+          "Quantity": 8
+        },
+        "9i0j1k2l-3m4n-5o6p7q8r9s0t3u4v5": {
+          "BookId": "9i0j1k2l-3m4n-5o6p7q8r9s0t3u4v5",
+          "AuthorId": "i9j0k1l2-m3n4o5p6q7r8s9t0u1v2w3",
+          "PublisherId": "v5u4t3s2-r1q0-p9o8-n7m6-l5k4j3i2v3",
+          "Title": "Moby Dick",
+          "PublicationDate": "1851-10-18",
+          "Isbn": "9781503280786",
+          "Pages": 720,
+          "Genre": "Adventure",
+          "Description": "The story of Captain Ahab's obsessive quest for revenge against the white whale, Moby Dick.",
+          "Price": 15.99,
+          "Quantity": 6
+        },
+        "0j1k2l3m-4n5o-6p7q8r9s0t4u5v6w7": {
+          "BookId": "0j1k2l3m-4n5o-6p7q8r9s0t4u5v6w7",
+          "AuthorId": "j0k1l2m3-n4o5p6q7r8s9t0u1v2w3x4",
+          "PublisherId": "w6v5u4t3-s2r1-q0p9-o8n7-m6l5k4j3x4",
+          "Title": "The Great Gatsby",
+          "PublicationDate": "1925-04-10",
+          "Isbn": "9780743273565",
+          "Pages": 180,
+          "Genre": "Fiction",
+          "Description": "A story about the American Dream and the moral decay of society during the Jazz Age.",
+          "Price": 9.99,
+          "Quantity": 10
+        },
+        "1k2l3m4n-5o6p7q8r9s0t5u6v7w8x9": {
+          "BookId": "1k2l3m4n-5o6p7q8r9s0t5u6v7w8x9",
+          "AuthorId": "k1l2m3n4-o5p6q7r8s9t0u1v2w3x4y5",
+          "PublisherId": "x7w6v5u4-t3s2-r1q0-p9o8-n7m6l5k4y5",
+          "Title": "The Odyssey",
+          "PublicationDate": "800-01-01",
+          "Isbn": "9780140268867",
+          "Pages": 541,
+          "Genre": "Epic Poetry",
+          "Description": "The ancient Greek epic poem by Homer that tells the story of Odysseus' 10-year journey home after the Trojan War.",
+          "Price": 13.50,
+          "Quantity": 7
+        },
+        "2l3m4n5o-6p7q8r9s0t6u7v8w9x0y1": {
+          "BookId": "2l3m4n5o-6p7q8r9s0t6u7v8w9x0y1",
+          "AuthorId": "l2m3n4o5-p6q7r8s9t0u1v2w3x4y5z6",
+          "PublisherId": "y8x7w6v5-u4t3-s2r1-q0p9-o8n7m6l5z6",
+          "Title": "War and Peace",
+          "PublicationDate": "1869-03-01",
+          "Isbn": "9780199232765",
+          "Pages": 1296,
+          "Genre": "Historical Fiction",
+          "Description": "A novel by Leo Tolstoy, chronicling the history of the Napoleonic Wars and their impact on Russian society.",
+          "Price": 18.99,
+          "Quantity": 4
+        }
+
 }
