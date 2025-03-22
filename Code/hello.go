@@ -3,7 +3,6 @@ package main
 import (
     "encoding/json"
     "fmt"
-    "log"
     "os"
 )
 
@@ -32,14 +31,9 @@ func readJSONFromFile(filePath string) (*BookBalanceParam, error) {
 }
 
 func main() {
-    filePath := "books.json"
+  
 
-    // Read and parse the JSON file
-    params, err := readJSONFromFile(filePath)
-    if err != nil {
-        log.Fatalf("Error reading JSON file: %v", err)
-    }
-
-    // Print the parsed result
-    fmt.Println(params)
+    var details = map[string]int{"a": 1, "b": 8}
+    details["a"]=55
+    fmt.Println(details)
 }

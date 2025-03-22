@@ -28,6 +28,7 @@ type DatabaseInterface interface{
 	setupDatabase() error
 	GetAllBookDetails() map[string]BookDetails
 	SaveBookDetails(book BookDetails)*BookDetails
+	UpdateBookDetails(book BookDetails,bookId string)*BookDetails
 }
 func NewDatabase()(*DatabaseInterface,error){
 	var database DatabaseInterface = &mockDB{}

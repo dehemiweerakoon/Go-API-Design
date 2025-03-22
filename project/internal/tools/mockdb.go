@@ -102,6 +102,29 @@ func (d *mockDB) SaveBookDetails(book BookDetails)*BookDetails{
 	return &book
 }
 
+func (d *mockDB) UpdateBookDetails(book BookDetails,bookId string)*BookDetails{
+	fileContent,err :=os.ReadFile("./book.json")
+	if err!=nil{
+		return nil
+	}
+	var existingBooks map[string]BookDetails
+	err = json.Unmarshal(fileContent,&existingBooks)
+	if err!=nil{
+		return nil
+	}
+	existingBooks[book.BookId]=book
+	updateData ,err := json.MarshalIndent(existingBooks,""," ")
+	if err!=nil{
+		fmt.Println("error updating file")
+	}
+	err = os.WriteFile("./book.json", updateData, 0644) // 6- owner  4-group 4-other
+	if err != nil {
+		fmt.Println("Error writing to file:", err)
+		return nil
+	}
+	return &book
+}
+
 func (d *mockDB) setupDatabase() error{
 	return nil
 }
