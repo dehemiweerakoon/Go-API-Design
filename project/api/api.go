@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 )
+type DeleteElement struct{
+	DeletedOrNot string
+}
 
 type BookBalanceParam struct {
 	BookId string

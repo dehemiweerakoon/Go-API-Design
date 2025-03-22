@@ -33,7 +33,10 @@ func readJSONFromFile(filePath string) (*BookBalanceParam, error) {
 func main() {
   
 
-    var details = map[string]int{"a": 1, "b": 8}
-    details["a"]=55
-    fmt.Println(details)
+/// var details = map[string]int{"a": 1, "b": 8}
+    var stringss  =[]string{"a","c","f"}
+    for  key := range stringss{
+       fmt.Println(stringss[key])
+    }
+    fmt.Println()
 }

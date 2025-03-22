@@ -124,6 +124,36 @@ func (d *mockDB) UpdateBookDetails(book BookDetails,bookId string)*BookDetails{
 	}
 	return &book
 }
+func (d *mockDB) DeleteBookDetails(bookId string)bool{
+// if the data is deleted return true anything other than that returns false .....
+    fileContent,err :=os.ReadFile("./book.json")
+	if err!=nil{
+		return false
+	}
+	var existingBooks map[string]BookDetails
+	err = json.Unmarshal(fileContent,&existingBooks)
+    if err!=nil{
+		return false
+	}
+
+	_, exists := existingBooks[bookId]; 
+	if !exists {
+		//fmt.Println(exists,val)
+		return false
+	}
+
+	delete(existingBooks,bookId) // delate the element in this 
+	updateData ,err := json.MarshalIndent(existingBooks,""," ")
+	if err!=nil{
+		fmt.Println("error updating file")
+	}
+	err = os.WriteFile("./book.json", updateData, 0644) // 6- owner  4-group 4-other
+	if err != nil {
+		fmt.Println("Error writing to file:", err)
+		return  false
+	}
+	return true
+}
 
 func (d *mockDB) setupDatabase() error{
 	return nil
