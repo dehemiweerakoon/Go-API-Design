@@ -1,7 +1,9 @@
 package tools
 
 import (
-	"time"
+	"encoding/json"
+	"fmt"
+	"os"
 )
 
 type mockDB struct{}
@@ -103,30 +105,40 @@ var mockBookDetails = map[string]BookDetails{
 }
 
 func(d *mockDB) GetUserLoginDetails(username string)*LoginDetails{
-	time.Sleep(time.Second*1)
+			var data = LoginDetails{}
 
-	var data = LoginDetails{}
+			data ,ok:=mockLoginDetails[username]
 
-	data ,ok:=mockLoginDetails[username]
+			if !ok {
+				return nil
+			}
+			return &data
+		}
 
-	if !ok {
+		func (d *mockDB) GetBookDetails(BookId string)*BookDetails{
+		// Read the content of the JSON file
+		fileContent, err := os.ReadFile("./book.json")
+		if err != nil {
+			return nil
+		}
+
+		// Create a map to hold books indexed by their BookId
+		var books map[string]BookDetails
+		err = json.Unmarshal(fileContent, &books)
+		if err != nil {
+			fmt.Println("Error unmarshalling JSON:", err)
+			return nil
+		}
+
+		// Fetch the book by BookId
+		if book, exists := books[BookId]
+		exists {
+			// Return the book details
+			return &book
+		}
+
+		// Return nil if the book is not found
 		return nil
-	}
-	return &data
-}
-
-func (d *mockDB) GetBookDetails(BookId string)*BookDetails{
-	///
-	time.Sleep(time.Second*1)
-
-	var data = BookDetails{}
-	data ,ok := mockBookDetails[BookId]
-
-	//
-	if !ok{
-		return nil
-	}
-	return &data
 }
 
 func (d *mockDB) setupDatabase() error{

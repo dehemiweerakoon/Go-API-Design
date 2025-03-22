@@ -9,17 +9,17 @@ type LoginDetails struct{
 	Username string
 }
 type BookDetails struct{
-	BookId          string
-	AuthorId        string
-	PublisherId     string
-	Title           string
-	PublicationDate string
-	Isbn            string
-	Pages           int
-	Genre           string
-	Description     string
-	Price float64
-	Quantity int
+	BookId         string  `json:"BookId"`
+	AuthorId       string  `json:"AuthorId"`
+	PublisherId    string  `json:"PublisherId"`
+	Title          string  `json:"Title"`
+	PublicationDate string  `json:"PublicationDate"`
+	Isbn           string  `json:"Isbn"`
+	Pages          int     `json:"Pages"`
+	Genre          string  `json:"Genre"`
+	Description    string  `json:"Description"`
+	Price          float64 `json:"Price"`
+	Quantity       int     `json:"Quantity"`
 }
 
 type DatabaseInterface interface{
