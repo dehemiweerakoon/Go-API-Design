@@ -1,0 +1,12 @@
+[
+    {
+        "name":"Alex",
+        "price":19.99,
+        "amount":3
+    },
+    {
+        "name":"Json",
+        "price":29.99,
+        "amount":1
+    }
+]
