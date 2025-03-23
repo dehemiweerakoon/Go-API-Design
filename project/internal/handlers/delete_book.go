@@ -17,10 +17,10 @@ func DeleteBook(w http.ResponseWriter,r *http.Request){
 	// err = decoder.Decode(&params,r.URL.Query())
 
 	 // Extract path variable "id" using chi.URLParam
-	 id := chi.URLParam(r, "id")
+	id := chi.URLParam(r, "id")
 
 	 // Map the "id" to the struct or use it directly
-	 params := api.BookBalanceParam{BookId: id}
+	params := api.BookBalanceParam{BookId: id}
 
 	var database *tools.DatabaseInterface
 	database,err = tools.NewDatabase()
