@@ -21,7 +21,7 @@ func main(){
 #     # #      #   #         #     #  #  ## #     #
 ####### ########   ######   #       # #   # #######
 	`)
-	err := http.ListenAndServe("localhost:9000",r)
+	err := http.ListenAndServe(":9000",r)
 	if err !=nil{
 		log.Error(err)
 	}

@@ -32,12 +32,12 @@ func GetSearchBook(w http.ResponseWriter,r *http.Request){
 		api.InternalErrorHandler(w)
 		return
 	}
-	var bookDetails = (*database).SearchHandler(params.Query)
+	var bookDetails = (*database).SearchHandler(params.Q)
 	if bookDetails==nil{
 		fmt.Println(bookDetails)
 		log.Error(err)
 		res := api.SearchQuery{
-			Query: "No Books Found",
+			Q: "No Books Found",
 		}
 		w.Header().Set("Content-Type","application/json")
 		err = json.NewEncoder(w).Encode(res)

@@ -8,7 +8,7 @@ type DeleteElement struct{
 	DeletedOrNot string
 }
 type SearchQuery struct{
-	Query string
+	Q string
 }
 
 type BookBalanceParam struct {
