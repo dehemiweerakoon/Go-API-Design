@@ -51,6 +51,18 @@ yourproject/
 └── README.md
 ```
 
+## Docker Instructions
+
+1. **Build the Docker image:**
+    ```sh
+    docker build -t go-app:latest .
+    ```
+
+2. **Run the Docker container:**
+    ```sh
+    docker run -p 9000:9000 go-app:latest
+    ```
+
 ## Contributing
 
 1. Fork the repository
