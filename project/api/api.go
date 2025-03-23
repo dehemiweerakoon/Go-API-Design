@@ -7,6 +7,9 @@ import (
 type DeleteElement struct{
 	DeletedOrNot string
 }
+type SearchQuery struct{
+	Query string
+}
 
 type BookBalanceParam struct {
 	BookId string

@@ -17,5 +17,6 @@ func Handler(r *chi.Mux){
 		router.Post("/books",SaveBook)
 		router.Put("/books/{id}",UpdateBook)
 		router.Delete("/books/{id}",DeleteBook)
+		router.Get("/books/search",GetSearchBook)
 	})
 }

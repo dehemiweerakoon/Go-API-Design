@@ -13,11 +13,10 @@ import (
 
 func GetBook(w http.ResponseWriter,r *http.Request){
 	// var params = api.BookBalanceParam{}
-
 	// var decoder  *schema.Decoder = schema.NewDecoder()
-
+    // err = decoder.Decode(&params,r.URL.Query())
 	var err error
-	// err = decoder.Decode(&params,r.URL.Query())
+	
 
 	 // Extract path variable "id" using chi.URLParam
 	 id := chi.URLParam(r, "id")

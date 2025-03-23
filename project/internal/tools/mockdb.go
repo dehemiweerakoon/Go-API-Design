@@ -4,9 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"runtime"
+	"strings"
+	"sync"
 )
 
-type mockDB struct{}
+type mockDB struct{
+}
 
 var mockLoginDetails =map[string] LoginDetails{
 	"alex" :{
@@ -22,7 +26,7 @@ var mockLoginDetails =map[string] LoginDetails{
 		Username: "marie",
 	}, 
 }
-
+var bookMap map[string]BookDetails 
 
 func(d *mockDB) GetUserLoginDetails(username string)*LoginDetails{
 			var data = LoginDetails{}
@@ -46,7 +50,7 @@ func (d *mockDB) GetBookDetails(BookId string)*BookDetails{
 		var books map[string]BookDetails
 		err = json.Unmarshal(fileContent, &books)
 		if err != nil {
-			fmt.Println("Error unmarshalling JSON:", err)
+			fmt.Println("Error Unmarshalling JSON:", err)
 			return nil
 		}
 
@@ -153,6 +157,58 @@ func (d *mockDB) DeleteBookDetails(bookId string)bool{
 		return  false
 	}
 	return true
+}
+func LoadBooks (filename string) error{
+	data,err := os.ReadFile("./book.json")
+	if err!=nil{
+		return err
+	}
+	return json.Unmarshal(data,&bookMap)
+}
+
+func (d *mockDB) SearchHandler(keyword string)[]BookDetails{
+	LoadBooks("./book.json")
+	booked := make([]BookDetails, 0, len(bookMap)) // Preallocate slice capacity
+	for _, book := range bookMap {
+		booked = append(booked, book)
+	}
+	
+	numWorkers:=runtime.NumCPU() // number of CPU 3 10/4 --> 12
+	chunkSize :=(len(booked) +numWorkers-1)/numWorkers
+
+	results := make(chan []BookDetails,numWorkers) //channel to collect results 
+	var wg sync.WaitGroup
+	// create multiple goroutines 
+	for i:=0;i<len(booked);i+=chunkSize{
+		end :=i+chunkSize
+		if end>len(booked){
+			end = len(booked)
+		}
+		wg.Add(1)
+		go SearchBooks(keyword,booked[i:end],results,&wg)
+	}
+
+	go func ()  {
+		wg.Wait()
+		close(results)
+	}()
+	var finalResults []BookDetails
+	for res := range results{
+		finalResults = append(finalResults, res...)
+	}
+	return finalResults
+}
+func SearchBooks(keyword string ,books []BookDetails,results chan<- []BookDetails,wg *sync.WaitGroup){
+	defer wg.Done()
+	var matchedBooks []BookDetails
+
+	keyword = strings.ToLower(keyword)
+	for _,book :=range books{
+		if strings.Contains(strings.ToLower(book.Title),strings.ToLower(keyword)) || strings.Contains(strings.ToLower(book.Description),strings.ToLower(keyword)){
+			matchedBooks = append(matchedBooks, book)
+		}
+	}
+	results <-matchedBooks
 }
 
 func (d *mockDB) setupDatabase() error{
