@@ -32,7 +32,16 @@ func DeleteBook(w http.ResponseWriter,r *http.Request){
 	var bookDetails = (*database).DeleteBookDetails(params.BookId)
 	if !bookDetails {
 		log.Error(err)
-		api.InternalErrorHandler(w)
+		var response = api.DeleteElement{
+			DeletedOrNot: "Book data is Not FOund ",
+		}
+		w.Header().Set("Content-Type","application/json")
+	    err = json.NewEncoder(w).Encode(response)
+		if err!=nil{
+			log.Error(err)
+			api.InternalErrorHandler(w)
+			return
+		}
 		return
 	}
 	var response = api.DeleteElement{
