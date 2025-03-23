@@ -8,13 +8,7 @@
 
 ## Setup
 
-1. **Clone the repository:**
-    ```sh
-    git clone https://github.com/yourusername/yourproject.git
-    cd yourproject
-    ```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
     ```sh
     go mod tidy
     ```
@@ -23,22 +17,22 @@
 
 1. **Build the project:**
     ```sh
-    go build -o yourproject
+    go build -o main ./cmd/api/main.go
     ```
 
 2. **Run the executable:**
     ```sh
-    ./yourproject
+   go run cmd/api/main.go
     ```
 
 3. **Access the API:**
-    Open your browser or API client (like Postman) and navigate to `http://localhost:8080`.
+    Open your browser or API client (like Postman) and navigate to `http://localhost:9000`.
 
 ## Testing
 
 1. **Run tests:**
     ```sh
-    go test ./...
+    go test -v ./internal/handlers 
     ```
 
 ## Directory Structure
