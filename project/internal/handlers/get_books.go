@@ -33,8 +33,16 @@ func GetBook(w http.ResponseWriter,r *http.Request){
 	}
 	var bookDetails = (*database).GetBookDetails(params.BookId)
 	if bookDetails==nil{
-		log.Error(err)
-		api.InternalErrorHandler(w)
+		var response = api.BookResponseParam{
+			BookId: "No book Is found",
+		}
+		w.Header().Set("Content-Type","application/json")
+		err = json.NewEncoder(w).Encode(response)
+		if err!=nil{
+			log.Error(err)
+			api.InternalErrorHandler(w)
+			return
+		}
 		return
 	}
 	var response = api.BookResponseParam{
