@@ -39,15 +39,19 @@
 
 ```
 yourproject/
-├── cmd/
+├──api/api.go
+│  
+├── cmd/api
 │   └── main.go
 ├── internal/
-│   ├── handler/
+│   ├── handlers/
+│   └── middleware/
 │   └── service/
 ├── pkg/
-│   └── models/
+│   └── tools/
 ├── go.mod
 ├── go.sum
+├── book.json
 └── README.md
 ```
 
@@ -61,6 +65,28 @@ yourproject/
 2. **Run the Docker container:**
     ```sh
     docker run -p 9000:9000 go-app:latest
+    ```
+
+## Running On the Kubernetes 
+
+1. **Build Docker image inside the minikube**
+    ```
+    minikube docker-env | Invoke-Expression
+    docker build -t go-api .
+    ```
+2. **Apply the changes**
+
+    ```
+    kubectl apply -f deployment.yaml
+    kubectl apply -f service.yaml
+    ```
+3. **Try port forwarding again**
+    ```
+    kubectl port-forward service/myservice 9000:80
+    ```
+4. **Access Via your web browser**
+    ```
+    http://localhost:9000/books
     ```
 
 ## Contributing

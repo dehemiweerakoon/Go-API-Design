@@ -27,6 +27,7 @@ var mockLoginDetails =map[string] LoginDetails{
 	}, 
 }
 var bookMap map[string]BookDetails 
+var api_Key = os.Getenv("API_KEY")
 
 func(d *mockDB) GetUserLoginDetails(username string)*LoginDetails{
 			var data = LoginDetails{}
@@ -41,7 +42,7 @@ func(d *mockDB) GetUserLoginDetails(username string)*LoginDetails{
 
 func (d *mockDB) GetBookDetails(BookId string)*BookDetails{
 		// Read the content of the JSON file
-		fileContent, err := os.ReadFile("./book.json")
+		fileContent, err := os.ReadFile("book.json")
 		if err != nil {
 			return nil
 		}
