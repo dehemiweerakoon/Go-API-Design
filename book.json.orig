@@ -3,7 +3,11 @@
   "BookId": "0j1k2l3m-4n5o-6p7q8r9s0t4u5v6w7",
   "AuthorId": "j0k1l2m3-n4o5p6q7r8s9t0u1v2w3x4",
   "PublisherId": "w6v5u4t3-s2r1-q0p9-o8n7-m6l5k4j3x4",
+<<<<<<< HEAD
   "Title": "The Great Gatsby is my fall reason",
+=======
+  "Title": "The Great Gatsby is my fall edited",
+>>>>>>> main
   "PublicationDate": "1925-04-10",
   "Isbn": "9780743273565",
   "Pages": 180,
