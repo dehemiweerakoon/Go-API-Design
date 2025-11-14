@@ -20,3 +20,5 @@ func Handler(r *chi.Mux){
 		router.Get("/books/search",GetSearchBook)
 	})
 }
+
+/// The doc of api
