@@ -21,4 +21,4 @@ func Handler(r *chi.Mux){
 	})
 }
 
-// added testing api sites for the purose good
+// added testing api sites for the purose good hoop
