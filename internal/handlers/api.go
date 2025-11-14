@@ -22,3 +22,5 @@ func Handler(r *chi.Mux) {
 }
 
 /// the api doc
+// added testing api sites for the purose
+
