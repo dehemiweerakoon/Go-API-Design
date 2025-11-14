@@ -26,7 +26,7 @@
     ```
 
 3. **Access the API:**
-    Open your bser or API client (like Postman) and navigate to `http://localhost:9000`.
+    Open your browser or API client (like Postman) and navigate to `http://localhost:9000`.
 
 ## Testing
 
@@ -84,7 +84,7 @@ yourproject/
     ```
     kubectl port-forward service/myservice 9000:80
     ```
-4. **Access Via your web bser**
+4. **Access Via your web browser**
     ```
     http://localhost:9000/books
     ```
@@ -107,3 +107,5 @@ outlet_data = [
     (2, "QuickShop", "Gampaha"),
     (3, "DailyNeeds", "Kandy")
 ]
+
+Thid id go application developmenent with kuberntes fundermentals
