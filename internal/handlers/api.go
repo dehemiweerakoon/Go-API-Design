@@ -20,3 +20,5 @@ func Handler(r *chi.Mux){
 		router.Get("/books/search",GetSearchBook)
 	})
 }
+
+// added testing api sites for the purose
