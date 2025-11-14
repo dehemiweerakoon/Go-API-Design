@@ -26,7 +26,7 @@
     ```
 
 3. **Access the API:**
-    Open your browser or API client (like Postman) and navigate to `http://localhost:9000`.
+    Open your bser or API client (like Postman) and navigate to `http://localhost:9000`.
 
 ## Testing
 
@@ -84,7 +84,7 @@ yourproject/
     ```
     kubectl port-forward service/myservice 9000:80
     ```
-4. **Access Via your web browser**
+4. **Access Via your web bser**
     ```
     http://localhost:9000/books
     ```
@@ -100,3 +100,10 @@ yourproject/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+outlet_data = [
+    (1, "SuperMart", "Colombo"),
+    (2, "QuickShop", "Gampaha"),
+    (3, "DailyNeeds", "Kandy")
+]
